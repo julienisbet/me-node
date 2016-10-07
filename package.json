@@ -1,0 +1,29 @@
+{
+  "name": "me-node",
+  "version": "1.0.0",
+  "description": "my site made with node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienisbet/me-node.git"
+  },
+  "author": "julienisbet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julienisbet/me-node/issues"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+}
