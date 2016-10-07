@@ -10,15 +10,15 @@ $(document).ready(function(){
         $('#nav-link-timeline').removeClass("selected");
     })
     $('#nav-link-timeline').on("click", function(){
+        //hide timeline blocks which are outside the viewport
         $('.bio').addClass("hide");
         $('.timeline').removeClass("hidden")
         $(this).addClass("selected");
         $('#nav-link-bio').removeClass("selected");
+        hideBlocks(timelineBlocks, offset);
     })
 
 
-    //hide timeline blocks which are outside the viewport
-    hideBlocks(timelineBlocks, offset);
 
     //on scolling, show/animate timeline blocks when enter the viewport
     $(window).on('scroll', function(){

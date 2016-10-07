@@ -24,8 +24,8 @@ module.exports = function(grunt) {
       		}
       	},
         watch: {
-            files: "src/less/app.less",
-            tasks: ["less"]
+            files: ["src/less/app.less", "src/js/app.js"],
+            tasks: ["less", "uglify"]
         }
 	});
 	grunt.loadNpmTasks('grunt-contrib-uglify');
