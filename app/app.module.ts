@@ -2,6 +2,8 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule} from '@angular/router';
 import { HomeComponent }   from './home.component';
+import { BioComponent }   from './bio.component';
+import { TimelineComponent }   from './timeline.component';
 
 @NgModule({
   imports: [ 
@@ -9,11 +11,11 @@ import { HomeComponent }   from './home.component';
   	RouterModule.forRoot([
       { path: 'bio', component: BioComponent },
       { path: 'timeline', component: TimelineComponent },
-      { path: '**', component: PageNotFoundComponent }
+      // { path: '**', component: PageNotFoundComponent }
     ])
 
    ],
-  declarations: [ HomeComponent ],
+  declarations: [ HomeComponent, BioComponent, TimelineComponent ],
   bootstrap:    [ HomeComponent ]
 })
 
