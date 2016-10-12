@@ -5,6 +5,9 @@ var ts = require('gulp-typescript');
 var del = require('del');
 var concat = require('gulp-concat')
 var runSequence = require('run-sequence');
+var less = require('gulp-less');
+var cleanCSS = require('gulp-clean-css');
+var watch = require('gulp-watch');
 
 gulp.task('clean', function(){
     return del('public/dist')
@@ -45,8 +48,22 @@ gulp.task('build:app', function(){
 		.pipe(gulp.dest('public/dist/app'))
 });
 
-gulp.task('build', function(callback){
-    runSequence('clean', 'build:index', 'build:app', callback);
+gulp.task('build:less', function () {
+  return gulp.src('./app/less/app.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('public/dist/css'));
 });
 
-gulp.task('default', ['build']);
+gulp.task('watch', function () {
+    gulp.watch('./app/less/app.less', ['build']);
+    gulp.watch('./app/*.ts', ['build']);
+});
+
+gulp.task('build', function(callback){
+    runSequence('clean', 'build:index', 'build:app', 'build:less', callback);
+});
+
+gulp.task('default', ['build', 'watch']);

@@ -5,7 +5,7 @@ app.use(express.static('public'));
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 
 
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendfile('./public/dist/index.html');
 });
 
