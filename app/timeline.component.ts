@@ -50,7 +50,7 @@ export class TimelineComponent {
     	return 'block';
   	}
 
-  	@HostBinding('style.visibility') get visibility() {
-    	return 'visible !important';
+  	@HostBinding('style.position') get visibility() {
+    	return 'absolute';
   	}
 }
