@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "concurrently --kill-others \"gulp\" \"nodemon server.js\"",
-    "postinstall": "typings install",
+    "postinstall": "typings install && gulp build",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
