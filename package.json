@@ -48,9 +48,9 @@
     "gulp-clean-css": "2.0.13",
     "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "2.10.0",
+    "gulp-watch": "4.3.10",
     "run-sequence": "1.1.5"
   },
   "devDependencies": {
-    "gulp-watch": "4.3.10"
   }
 }
