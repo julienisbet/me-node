@@ -4,7 +4,8 @@
   "description": "my site made with node",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently --kill-others \"gulp\" \"nodemon server.js\"",
+    "start": "node server.js",
+    "postinstall": "gulp build",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
