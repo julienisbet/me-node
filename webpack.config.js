@@ -1,42 +1,45 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './client/index.html',
-  filename: 'index.html',
-  inject: 'body'
-})
-const AssetsCopy = new CopyWebpackPlugin([ { from: 'client/assets', to: 'assets' } ])
+  template: "./client/index.html",
+  filename: "index.html",
+  inject: "body",
+});
+
+const AssetsCopy = new CopyWebpackPlugin([{ from: "client/assets", to: "assets" }]);
+
 module.exports = {
-  entry: ['./client/index.jsx', './client/less/app.less'],
+  entry: ["./client/index.jsx", "./client/less/app.less"],
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js',
+    path: path.resolve("dist"),
+    filename: "index_bundle.js",
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        loader: "babel-loader",
+        exclude: /node_modules/,
       },
-      { 
+      {
         test: /\.less$/,
         use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            },{
-                loader: "css-loader" // translates CSS into CommonJS
-            },{
-                loader: "autoprefixer-loader" // translates CSS into CommonJS
-            },{
-                loader: "less-loader" // compiles Less to CSS
-            }]
+          loader: "style-loader", // creates style nodes from JS strings
+        }, {
+          loader: "css-loader", // translates CSS into CommonJS
+        }, {
+          loader: "autoprefixer-loader", // translates CSS into CommonJS
+        }, {
+          loader: "less-loader", // compiles Less to CSS
+        }],
       },
-    ]
+    ],
   },
-  plugins: [HtmlWebpackPluginConfig, AssetsCopy]
-}
+  plugins: [HtmlWebpackPluginConfig, AssetsCopy],
+};
