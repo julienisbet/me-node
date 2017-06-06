@@ -11,9 +11,9 @@ export default class FormRouter extends React.Component {
     return (
       <Router>
         <div>
-          <Route path="/" component={Home} />
+          <Home/>
           <Route exact path="/" component={Bio} />
-          <Route path="/timeline" component={Timeline} />
+          <Route exact path="/timeline" component={Timeline} />
         </div>
       </Router>
     );

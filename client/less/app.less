@@ -15,6 +15,7 @@ body {
     font-family: @futura;
     font-size: 18px;
     margin-bottom: 5px;
+    line-height: 24px;
   }
   .hidden {
     visibility: hidden;
@@ -45,6 +46,7 @@ body {
      img {
       height: 30px;
       width: 30px;
+      margin-right: 5px;
      }
   }
 }
@@ -59,6 +61,8 @@ body {
   width: 80%;
   text-align: left;
   color: @myBlue;
+  position: absolute;
+  top: 285px;
 }
 .nav {
   padding: 20px;
@@ -72,8 +76,12 @@ body {
     padding: 10px;
     letter-spacing: 0.89px;
     background: transparent;
+      text-decoration: none;
     &.selected {
       border-bottom: 3px solid @myBlue;
+    }
+    &:hover:not(.selected) {
+      color: @blueShade;
     }
   }
   @media screen and (max-width: 500px) {
@@ -86,10 +94,13 @@ body {
 }
 .timeline {
   width: 100%;
+  position: absolute;
+  top: 285px;
+
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -85px;
     left: calc(~'50% - 2px');
     height: 100%;
     width: 4px;
