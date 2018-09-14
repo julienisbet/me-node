@@ -4,7 +4,8 @@
   "description": "my site made with node",
   "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

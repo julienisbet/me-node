@@ -6,7 +6,7 @@ import Home from "./Home.jsx";
 import Timeline from "./Timeline.jsx";
 import Bio from "./Bio.jsx";
 
-export default class FormRouter extends React.Component {
+export default class AppRouter extends React.Component {
   render() {
     return (
       <Router>
