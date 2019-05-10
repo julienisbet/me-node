@@ -14,7 +14,7 @@ export default class Home extends React.Component {
             <h1>Julie Nisbet</h1>
             <div id="links">
                 <a href="https://github.com/julienisbet" target="_blank"><img src="assets/logos/github.png"/></a>
-                <a href="http://www.linkedin.com/in/jmnisbet" target="_blank"><img src="assets/logos/linkedin.png"/></a>
+                <a href="http://www.linkedin.com/in/julienisbet" target="_blank"><img src="assets/logos/linkedin.png"/></a>
                 <a href="http://julesnisbet.tumblr.com/" target="_blank"><img src="assets/logos/tumblr.png"/></a>
                 <a href="http://www.instagram.com/juleslaroo" target="_blank"><img src="assets/logos/instagram.png"/></a>
                 <a href="http://www.twitter.com/julesnisbet" target="_blank"><img src="assets/logos/twitter.png"/></a>
