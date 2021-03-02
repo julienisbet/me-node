@@ -11,7 +11,7 @@ export default class Timeline extends React.Component {
      const listItems = Constants.MOMENTS.map(function(moment) {
       return (
 		    <div className="timeline-block" key={moment.id}>
-		        <div className="timeline-content"><span className="timeline-text">{moment.date}:<span dangerouslySetInnerHTML={{__html: moment.text}}></span></span></div>
+		        <div className="timeline-content"><span className="timeline-text">{moment.date}: <span dangerouslySetInnerHTML={{__html: moment.text}}></span></span></div>
 		    </div>
       );
     });
