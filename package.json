@@ -4,8 +4,9 @@
   "description": "my site made with node",
   "main": "server.js",
   "scripts": {
-    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
-    "dev": "webpack-dev-server"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
