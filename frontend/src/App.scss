@@ -1,0 +1,141 @@
+@import 'variables';
+
+body {
+  background-color: $myBackground;
+  font-family: $helvetica;
+}
+
+  h1 {
+    font-variant: small-caps;
+    font-family: $montserrat;
+    font-size: 36px;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-family: $montserrat;
+    font-size: 18px;
+    margin-bottom: 5px;
+    line-height: 24px;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  .hide {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+    color: $myRed;
+  }
+      
+
+.headline { 
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  background-color: $myRed;
+  text-align: left;
+  padding-left: 20px;
+    h1 {
+      color: $myBackground;
+    }
+
+  #links {
+     img {
+      height: 30px;
+      width: 30px;
+      margin-right: 5px;
+     }
+  }
+}
+.about {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+.bio {
+  font-family: $montserrat;
+  margin-left: 20px;
+  width: 80%;
+  text-align: left;
+  color: $myBlue;
+  position: absolute;
+  top: 285px;
+}
+.nav {
+  padding: 20px;
+  .nav-item {
+    cursor: pointer;
+    display: inline-block;
+    font-family: $montserrat;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $myBlue;
+    padding: 10px;
+    letter-spacing: 0.89px;
+    background: transparent;
+      text-decoration: none;
+    &.selected {
+      border-bottom: 3px solid $myBlue;
+    }
+    &:hover:not(.selected) {
+      color: $blueShade;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    padding: 10px;
+    .nav-item {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
+}
+.timeline {
+  width: 100%;
+  position: absolute;
+  top: 285px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -85px;
+    left: calc(50% - 2px);
+    height: 105%;
+    width: 4px;
+    background: $myBlue;
+  }
+  .timeline-block {
+    font-family: $montserrat;
+    color: $myBlue;
+    font-size: 14px;
+    width: 50%;
+    text-align: right;
+    &:nth-child(even){
+      margin-left: 50%;
+      text-align: left;
+    }
+    .timeline-content {
+      padding: 20px;
+      &::before{
+        content: '';
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        border-radius: 8px;
+        background-color: $myBlue;
+        left: calc(50% - 8px);
+        visibility: inherit;
+      }
+    }
+
+    /*animations*/
+    .timeline-text {
+      display: block;
+
+    }
+
+
+  }
+}
