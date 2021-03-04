@@ -3,6 +3,7 @@
 body {
   background-color: $myBackground;
   font-family: $helvetica;
+  box-sizing: border-box;
 }
 
   h1 {
@@ -72,16 +73,33 @@ body {
     font-family: $montserrat;
     font-size: 16px;
     text-transform: uppercase;
-    color: $myBlue;
     padding: 10px;
     letter-spacing: 0.89px;
     background: transparent;
-      text-decoration: none;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+    color: $blueShade;
+    &:first-child:after{
+      background: none repeat scroll 0 0 $myBlue;
+      display: block;
+      content: "";
+      height: 3px;
+      width: 100%;
+      margin-top: 10px;
+      position: relative;
+      left: 120px;
+      transition: all 1s ease-out;
+    }
+    &:first-child.selected:after {
+      left: 0px;
+      transition: all 0.5s ease-out;
+    }
     &.selected {
-      border-bottom: 3px solid $myBlue;
+      color: $myBlue;
     }
     &:hover:not(.selected) {
-      color: $blueShade;
+      color: $myBlue;
     }
   }
   @media screen and (max-width: 500px) {
@@ -138,4 +156,14 @@ body {
 
 
   }
+}
+
+@keyframes in {
+  from {width:0;}
+  to {width: 100%;}
+}
+
+@keyframes out {
+  from {width:100%;}
+  to {width: 0;}
 }
